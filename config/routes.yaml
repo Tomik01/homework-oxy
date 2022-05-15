@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+main:
+    path:       /
+    controller: App\Controller\UsersController::newUser
+    methods:    GET|HEAD|POST

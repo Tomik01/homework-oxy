@@ -1,0 +1,16 @@
+#mainTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mainTable td {
+    padding: 6px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}

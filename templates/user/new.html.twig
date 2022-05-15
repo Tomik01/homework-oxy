@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <h1>Registrace nového uživatele</h1>
+
+{{ form_start(form) }}
+    <table id="mainTable">
+        <tr><td>{{ form_label(form.name) }}</td><td>{{ form_widget(form.name) }} {{ form_errors(form.name) }}</td></tr>
+        <tr><td>{{ form_label(form.email) }}</td><td>{{ form_widget(form.email) }} {{ form_errors(form.email) }}</td></tr>
+        <tr><td>{{ form_label(form.role) }}</td><td>{{ form_widget(form.role) }} {{ form_errors(form.role) }}</td></tr>
+        <tr><td>{{ form_label(form.password.first) }}</td><td>{{ form_widget(form.password.first) }} {{ form_errors(form.password.first) }}</td></tr>
+        <tr><td>{{ form_label(form.password.second) }}</td><td>{{ form_widget(form.password.second) }} {{ form_errors(form.password.second) }}</td></tr>
+        <tr><td class="center" colspan="2">{{ form_widget(form.save) }}</td></tr>
+        <tr><td class="center" colspan="2"><hr /></td></tr>
+        <tr><td class="center" colspan="2"><a href="{{ path('restReadAllUsers', [], false) }}"><button name="allUsers" type="button">Seznam všech uživatelů</button></a></td></tr>
+    </table>
+{{ form_end(form) }}
+
+{% endblock %}
